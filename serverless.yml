@@ -1,4 +1,5 @@
 service: threadz-api
+
 provider:
   memorySize: 128
   name: aws
@@ -23,3 +24,17 @@ plugins:
   - serverless-webpack
   - serverless-offline
   - serverless-jetpack
+  - serverless-dynamodb-local
+
+custom:
+  dynamodb:
+    stages:
+      - dev
+    start:
+      port: 8000
+      inMemory: true
+      heapInitial: 200m
+      heapMax: 1g
+      migrate: true
+      seed: true
+      convertEmptyValues: true

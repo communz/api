@@ -11,4 +11,4 @@ const schemaTypeDefs = gql`
 `;
 
 export const typeDefs = [schemaTypeDefs, threadTypeDefs];
-export const resolvers = threadResolvers
+export const resolvers = mergeDeep(threadResolvers);
