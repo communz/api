@@ -24,7 +24,6 @@ plugins:
   - serverless-webpack
   - serverless-offline
   - serverless-jetpack
-  - serverless-dynamodb-local
 
 custom:
   dynamodb:

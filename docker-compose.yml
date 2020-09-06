@@ -1,0 +1,13 @@
+version: "3"
+services:
+  db:
+    image: "postgres"
+    container_name: "database"
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_MULTIPLE_DATABASES=app,app_test
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgresql-volume:/var/lib/postgresql/data
